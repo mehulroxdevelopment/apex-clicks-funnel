@@ -10,7 +10,7 @@ export const HeroSection = ({ onCTAClick }: HeroSectionProps) => {
     <section className="min-h-screen bg-gradient-bg flex flex-col items-center justify-center px-4 py-12 text-center">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Header Banner */}
-        <div className="bg-warning text-warning-foreground p-4 rounded-2xl shadow-card transform hover:scale-105 transition-smooth">
+        <div className="bg-gradient-accent text-white p-4 rounded-2xl shadow-card transform hover:scale-105 transition-smooth">
           <h2 className="text-lg md:text-xl font-bold">
             An open letter to every Real Estate Agent owner cold calling and depending on marketplaces like{" "}
             <span className="underline">Zillow & Realtor</span>
@@ -39,10 +39,11 @@ export const HeroSection = ({ onCTAClick }: HeroSectionProps) => {
             variant="cta" 
             size="lg" 
             onClick={onCTAClick}
-            className="text-xl px-12 py-6 rounded-2xl flex flex-col items-center"
+            className="text-xl px-12 py-6 rounded-2xl"
           >
-            <span>Get the Growth Framework</span>
-            <span className="text-sm font-normal opacity-90 mt-1">
+            Get the Growth Framework
+            <br />
+            <span className="text-base font-normal opacity-90">
               (Get FREE what costed us millions to find out)
             </span>
           </Button>
