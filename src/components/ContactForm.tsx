@@ -171,12 +171,11 @@ export const ContactForm = () => {
               variant="cta" 
               size="lg" 
               disabled={isSubmitting}
-              className="w-full text-xl py-6 rounded-2xl mt-8"
+              className="w-full text-xl py-6 rounded-2xl mt-8 min-h-[80px] flex flex-col items-center justify-center"
             >
               {isSubmitting ? "Submitting..." : (
                 <>
-                  Get the Growth Framework
-                  <br />
+                  <span>Get the Growth Framework</span>
                   <span className="text-base font-normal opacity-90">
                     (Get FREE what costed us millions to find out)
                   </span>

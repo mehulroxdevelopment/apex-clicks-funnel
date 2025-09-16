@@ -51,10 +51,9 @@ export const CredibilitySection = ({ onCTAClick }: CredibilitySectionProps) => {
             variant="cta" 
             size="lg" 
             onClick={onCTAClick}
-            className="text-xl px-12 py-6 rounded-2xl"
+            className="text-xl px-8 py-6 rounded-2xl min-h-[80px] flex flex-col items-center justify-center"
           >
-            Get the Growth Framework
-            <br />
+            <span>Get the Growth Framework</span>
             <span className="text-base font-normal opacity-90">
               (Get Free what costed us millions to find out)
             </span>

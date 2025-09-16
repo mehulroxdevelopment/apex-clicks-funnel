@@ -80,10 +80,9 @@ export const CountdownSection = ({ onCTAClick }: CountdownSectionProps) => {
             variant="cta" 
             size="lg" 
             onClick={onCTAClick}
-            className="text-xl px-12 py-6 rounded-2xl animate-pulse"
+            className="text-xl px-8 py-6 rounded-2xl min-h-[80px] animate-pulse flex flex-col items-center justify-center"
           >
-            Get the Growth Framework
-            <br />
+            <span>Get the Growth Framework</span>
             <span className="text-base font-normal opacity-90">
               (Get Free what costed us millions to find out)
             </span>
