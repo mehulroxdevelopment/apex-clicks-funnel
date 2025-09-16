@@ -75,7 +75,7 @@ export const CountdownSection = ({ onCTAClick }: CountdownSectionProps) => {
         </div>
 
         {/* Final CTA */}
-        <div className="space-y-4">
+        <div className="space-y-4 flex flex-col items-center">
           <Button 
             variant="cta" 
             size="lg" 

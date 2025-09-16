@@ -46,7 +46,7 @@ export const CredibilitySection = ({ onCTAClick }: CredibilitySectionProps) => {
         </div>
 
         {/* CTA Section */}
-        <div className="space-y-4 pt-8">
+        <div className="space-y-4 pt-8 flex flex-col items-center">
           <Button 
             variant="cta" 
             size="lg" 
