@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -18,6 +19,7 @@ export const ContactForm = () => {
     phone: ""
   });
   const { toast } = useToast();
+  const navigate = useNavigate();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -69,12 +71,16 @@ export const ContactForm = () => {
     
     toast({
       title: "Success!",
-      description: "Your information has been submitted. We'll send you the Growth Framework shortly!",
-      duration: 5000,
+      description: "Redirecting you to your Growth Framework...",
+      duration: 3000,
     });
     
     setIsSubmitting(false);
-    setFormData({ firstName: "", email: "", phone: "" });
+    
+    // Navigate to success page after a brief delay
+    setTimeout(() => {
+      navigate('/success');
+    }, 1500);
   };
 
   return (
