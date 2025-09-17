@@ -1,9 +1,18 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Lock } from "lucide-react";
 
 const Success = () => {
+  const navigate = useNavigate();
+
+  const handleBookingClick = () => {
+    navigate("/booking");
+  };
+
   return (
     <section className="min-h-screen bg-gradient-bg flex flex-col items-center justify-center px-4 py-12 text-center">
-      <div className="max-w-6xl mx-auto space-y-8 w-full">
+      <div className="max-w-6xl mx-auto space-y-12">
         {/* Success Message */}
         <p className="text-lg md:text-xl text-blue-400 font-medium">
           Success! Here is the Battle-Tested Growth Framework we promised...
@@ -11,7 +20,7 @@ const Success = () => {
 
         {/* Main Header */}
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
             <span className="text-foreground">Copy and Paste This Proven </span>
             <span className="bg-gradient-primary bg-clip-text text-transparent">'Acquisition System'</span>
             <span className="text-foreground"> to Book </span>
@@ -21,7 +30,7 @@ const Success = () => {
         </div>
 
         {/* Video Section */}
-        <div className="mt-12 w-full">
+        <div className="w-full">
           <div className="relative w-full max-w-5xl mx-auto">
             <div className="aspect-video rounded-2xl overflow-hidden shadow-elegant bg-card border">
               <iframe 
@@ -34,6 +43,22 @@ const Success = () => {
               />
             </div>
           </div>
+        </div>
+
+        {/* CTA Section */}
+        <div className="space-y-4 flex flex-col items-center">
+          <Button 
+            variant="cta" 
+            size="lg" 
+            onClick={handleBookingClick}
+            className="text-xl px-8 py-6 rounded-2xl min-h-[80px] flex flex-col items-center justify-center"
+          >
+            <span>Claim your FREE 60-Minute 1:1 Strategy Session</span>
+          </Button>
+          
+          <p className="text-base text-muted-foreground font-medium">
+            Be quick! Spots are almost gone for September
+          </p>
         </div>
       </div>
     </section>
