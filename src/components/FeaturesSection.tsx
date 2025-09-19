@@ -72,7 +72,7 @@ export const FeaturesSection = () => {
     <section className="py-20 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
             Here's Just a Fraction of What<br />
             You'll Discover Inside<br />
@@ -85,11 +85,7 @@ export const FeaturesSection = () => {
         {/* Features Grid */}
         <div className="space-y-8">
           {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className="flex gap-6 p-6 rounded-2xl bg-card shadow-card hover:shadow-elegant transition-smooth group animate-fade-in-up"
-              style={{ animationDelay: `${index * 100 + 200}ms` }}
-            >
+            <div key={index} className="flex gap-6 p-6 rounded-2xl bg-card shadow-card hover:shadow-elegant transition-smooth group">
               <div className="flex-shrink-0">
                 <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center group-hover:scale-110 transition-bounce">
                   <feature.icon className="w-8 h-8 text-white" />
@@ -142,7 +138,7 @@ export const FeaturesSection = () => {
         </div>
 
         {/* Additional Features */}
-        <div className="mt-12 p-8 bg-gradient-accent rounded-2xl text-white text-center animate-scale-in [animation-delay:1000ms]">
+        <div className="mt-12 p-8 bg-gradient-accent rounded-2xl text-white text-center">
           <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
             <CheckCircle className="w-10 h-10" />
           </div>

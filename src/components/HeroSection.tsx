@@ -10,7 +10,7 @@ export const HeroSection = ({ onCTAClick }: HeroSectionProps) => {
     <section className="min-h-screen bg-gradient-bg flex flex-col items-center justify-center px-4 py-12 text-center">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Header Banner */}
-        <div className="bg-gradient-accent text-white p-4 rounded-2xl shadow-card transform hover:scale-105 transition-smooth animate-fade-in-up">
+        <div className="bg-gradient-accent text-white p-4 rounded-2xl shadow-card transform hover:scale-105 transition-smooth">
           <h2 className="text-lg md:text-xl font-bold">
             An open letter to every Real Estate Agent owner cold calling and depending on marketplaces like{" "}
             <span className="underline">Zillow & Realtor</span>
@@ -18,7 +18,7 @@ export const HeroSection = ({ onCTAClick }: HeroSectionProps) => {
         </div>
 
         {/* Main Headline */}
-        <div className="space-y-6 animate-fade-in-up [animation-delay:200ms]">
+        <div className="space-y-6">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight">
             <span className="text-foreground">"Steal This Proven </span>
             <span className="bg-gradient-primary bg-clip-text text-transparent">'Acquisition System'</span>
@@ -34,12 +34,12 @@ export const HeroSection = ({ onCTAClick }: HeroSectionProps) => {
         </div>
 
         {/* CTA Button */}
-        <div className="space-y-4 flex flex-col items-center animate-fade-in-up [animation-delay:400ms]">
+        <div className="space-y-4 flex flex-col items-center">
           <Button 
             variant="cta" 
             size="lg" 
             onClick={onCTAClick}
-            className="text-xl px-8 py-6 rounded-2xl min-h-[80px] flex flex-col items-center justify-center transform hover:scale-105 transition-smooth"
+            className="text-xl px-8 py-6 rounded-2xl min-h-[80px] flex flex-col items-center justify-center"
           >
             <span>Get the Growth Framework</span>
             <span className="text-base font-normal opacity-90">
