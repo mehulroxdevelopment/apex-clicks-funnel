@@ -19,7 +19,7 @@ const Booking = () => {
       <div className="max-w-7xl mx-auto w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left Side - Content */}
-          <div className="space-y-8 lg:sticky lg:top-8">
+          <div className="space-y-8 lg:sticky lg:top-8 animate-fade-in-up">
             <div className="text-center lg:text-left">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-foreground mb-6">
                 What's included in your{' '}
@@ -89,7 +89,7 @@ const Booking = () => {
           </div>
 
           {/* Right Side - Calendar */}
-          <div className="w-full">
+          <div className="w-full animate-scale-in [animation-delay:200ms]">
             <div className="bg-card rounded-2xl shadow-elegant border p-4">
               <div 
                 className="calendly-inline-widget" 
