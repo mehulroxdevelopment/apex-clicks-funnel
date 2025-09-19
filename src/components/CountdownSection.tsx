@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Lock } from "lucide-react";
+import { ScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface CountdownSectionProps {
   onCTAClick: () => void;
@@ -41,58 +42,64 @@ export const CountdownSection = ({ onCTAClick }: CountdownSectionProps) => {
     <section className="py-20 px-4 bg-gradient-bg">
       <div className="max-w-4xl mx-auto text-center space-y-12">
         {/* Countdown Timer */}
-        <div className="space-y-8">
-          <div className="flex justify-center gap-4 md:gap-8">
-            {Object.entries(timeLeft).map(([unit, value]) => (
-              <div key={unit} className="text-center">
-                <div className="bg-gradient-primary text-white rounded-2xl p-4 md:p-6 shadow-elegant">
-                  <div className="text-3xl md:text-5xl font-black">
-                    {formatTime(value)}
+        <ScrollAnimation animation="fade-up">
+          <div className="space-y-8">
+            <div className="flex justify-center gap-4 md:gap-8">
+              {Object.entries(timeLeft).map(([unit, value]) => (
+                <div key={unit} className="text-center">
+                  <div className="bg-gradient-primary text-white rounded-2xl p-4 md:p-6 shadow-elegant">
+                    <div className="text-3xl md:text-5xl font-black">
+                      {formatTime(value)}
+                    </div>
+                  </div>
+                  <div className="text-sm md:text-base text-muted-foreground mt-2 uppercase tracking-wide">
+                    {unit}
                   </div>
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground mt-2 uppercase tracking-wide">
-                  {unit}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </ScrollAnimation>
 
         {/* Urgency Message */}
-        <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-black">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">
-              Get The Growth Framework
-            </span>
-            <br />
-            Before This Page Comes Down.
-          </h2>
-          
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            This FREE Framework reveals the most explosively powerful secrets we discovered running literally thousands 
-            of campaigns in 100+ different industries and niches and spending millions of dollars in traffic.
-          </p>
-        </div>
+        <ScrollAnimation animation="fade-up" delay={200}>
+          <div className="space-y-6">
+            <h2 className="text-4xl md:text-5xl font-black">
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                Get The Growth Framework
+              </span>
+              <br />
+              Before This Page Comes Down.
+            </h2>
+            
+            <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              This FREE Framework reveals the most explosively powerful secrets we discovered running literally thousands 
+              of campaigns in 100+ different industries and niches and spending millions of dollars in traffic.
+            </p>
+          </div>
+        </ScrollAnimation>
 
         {/* Final CTA */}
-        <div className="space-y-4 flex flex-col items-center">
-          <Button 
-            variant="cta" 
-            size="lg" 
-            onClick={onCTAClick}
-            className="text-xl px-8 py-6 rounded-2xl min-h-[80px] animate-pulse flex flex-col items-center justify-center"
-          >
-            <span>Get the Growth Framework</span>
-            <span className="text-base font-normal opacity-90">
-              (Get Free what costed us millions to find out)
-            </span>
-          </Button>
-          
-          <div className="flex items-center justify-center gap-2 text-muted-foreground">
-            <Lock className="w-4 h-4" />
-            <span className="text-sm">100% Privacy. No games, no spam.</span>
+        <ScrollAnimation animation="scale-in" delay={400}>
+          <div className="space-y-4 flex flex-col items-center">
+            <Button 
+              variant="cta" 
+              size="lg" 
+              onClick={onCTAClick}
+              className="text-xl px-8 py-6 rounded-2xl min-h-[80px] animate-pulse flex flex-col items-center justify-center"
+            >
+              <span>Get the Growth Framework</span>
+              <span className="text-base font-normal opacity-90">
+                (Get Free what costed us millions to find out)
+              </span>
+            </Button>
+            
+            <div className="flex items-center justify-center gap-2 text-muted-foreground">
+              <Lock className="w-4 h-4" />
+              <span className="text-sm">100% Privacy. No games, no spam.</span>
+            </div>
           </div>
-        </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
