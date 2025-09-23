@@ -87,22 +87,22 @@ export const ContactForm = () => {
     <section className="min-h-screen bg-gradient-bg flex flex-col items-center justify-center px-4 py-12">
       <div className="max-w-4xl mx-auto text-center space-y-8 w-full">
         {/* Header */}
-        <div className="space-y-4 md:space-y-6">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight px-2">
+        <div className="space-y-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
             Unlock your{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">FREE</span>{" "}
             Growth Framework now before this comes down
           </h1>
           
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             This Growth Framework reveals the most powerful, high-converting strategies we've uncovered after running 
             hundreds of campaigns across Real Estate, other industries, and investing millions in online traffic.
           </p>
         </div>
 
         {/* Form */}
-        <div className="bg-card p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl shadow-elegant max-w-2xl mx-auto">
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-center">
+        <div className="bg-card p-8 rounded-3xl shadow-elegant max-w-2xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center">
             Enter your details below:
           </h2>
           
@@ -177,12 +177,12 @@ export const ContactForm = () => {
               variant="cta" 
               size="lg" 
               disabled={isSubmitting}
-              className="w-full text-lg sm:text-xl py-4 sm:py-6 rounded-xl sm:rounded-2xl mt-6 sm:mt-8 min-h-[60px] sm:min-h-[80px] flex flex-col items-center justify-center"
+              className="w-full text-xl py-6 rounded-2xl mt-8 min-h-[80px] flex flex-col items-center justify-center"
             >
               {isSubmitting ? "Submitting..." : (
                 <>
-                  <span className="text-center">Get the Growth Framework</span>
-                  <span className="text-sm sm:text-base font-normal opacity-90 text-center">
+                  <span>Get the Growth Framework</span>
+                  <span className="text-base font-normal opacity-90">
                     (Get FREE what costed us millions to find out)
                   </span>
                 </>
