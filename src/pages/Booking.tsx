@@ -17,29 +17,29 @@ const Booking = () => {
   return (
     <section className="min-h-screen bg-gradient-bg flex flex-col items-center justify-center px-4 py-12">
       <div className="max-w-7xl mx-auto w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Left Side - Content */}
-          <div className="space-y-8 lg:sticky lg:top-8">
+          <div className="space-y-6 lg:space-y-8 lg:sticky lg:top-8 px-2">
             <div className="text-center lg:text-left">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-foreground mb-6">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-foreground mb-4 lg:mb-6">
                 What's included in your{' '}
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
                   Free Strategy Call
                 </span>
               </h1>
               
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-lg">
+              <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 lg:mb-8 max-w-lg mx-auto lg:mx-0">
                 A quick 60-minute call to analyze your business and give you a detailed roadmap for applying the Growth Framework
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="flex items-start gap-3 sm:gap-4">
                 <div className="flex-shrink-0">
-                  <CheckCircle className="w-8 h-8 text-blue-500" />
+                  <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground mb-1 sm:mb-2">
                     Discover exactly how our framework can{' '}
                     <span className="bg-gradient-primary bg-clip-text text-transparent">scale you</span>{' '}
                     to the next level.
@@ -47,12 +47,12 @@ const Booking = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3 sm:gap-4">
                 <div className="flex-shrink-0">
-                  <CheckCircle className="w-8 h-8 text-blue-500" />
+                  <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground mb-1 sm:mb-2">
                     Get a{' '}
                     <span className="bg-gradient-primary bg-clip-text text-transparent">personalized strategy</span>{' '}
                     built specifically for your growth and success.
@@ -60,12 +60,12 @@ const Booking = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3 sm:gap-4">
                 <div className="flex-shrink-0">
-                  <CheckCircle className="w-8 h-8 text-blue-500" />
+                  <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground mb-1 sm:mb-2">
                     Leverage{' '}
                     <span className="bg-gradient-primary bg-clip-text text-transparent">proven methods</span>{' '}
                     to consistently outperform industry benchmarks.
@@ -73,12 +73,12 @@ const Booking = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
+              <div className="flex items-start gap-3 sm:gap-4">
                 <div className="flex-shrink-0">
-                  <CheckCircle className="w-8 h-8 text-blue-500" />
+                  <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-blue-500" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-foreground mb-2">
+                  <h3 className="text-base sm:text-lg font-bold text-foreground mb-1 sm:mb-2">
                     Access{' '}
                     <span className="bg-gradient-primary bg-clip-text text-transparent">expert insights</span>{' '}
                     and guidance to optimize your results at every stage.
@@ -89,12 +89,12 @@ const Booking = () => {
           </div>
 
           {/* Right Side - Calendar */}
-          <div className="w-full">
-            <div className="bg-card rounded-2xl shadow-elegant border p-4">
+          <div className="w-full px-2 lg:px-0">
+            <div className="bg-card rounded-xl sm:rounded-2xl shadow-elegant border p-2 sm:p-4">
               <div 
                 className="calendly-inline-widget" 
                 data-url="https://calendly.com/mehulroxbusinesss/free-strategy-session" 
-                style={{ minWidth: '320px', height: '700px' }}
+                style={{ minWidth: '280px', height: '600px' }}
               ></div>
             </div>
           </div>

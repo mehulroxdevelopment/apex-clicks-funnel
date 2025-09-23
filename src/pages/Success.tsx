@@ -12,15 +12,15 @@ const Success = () => {
 
   return (
     <section className="min-h-screen bg-gradient-bg flex flex-col items-center justify-center px-4 py-12 text-center">
-      <div className="max-w-6xl mx-auto space-y-12">
+      <div className="max-w-6xl mx-auto space-y-8 sm:space-y-12">
         {/* Success Message */}
-        <p className="text-lg md:text-xl text-blue-400 font-medium">
+        <p className="text-base sm:text-lg md:text-xl text-blue-400 font-medium px-2">
           Success! Here is the Battle-Tested Growth Framework we promised...
         </p>
 
         {/* Main Header */}
-        <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
+        <div className="space-y-4 sm:space-y-6 px-2">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black leading-tight">
             <span className="text-foreground">Copy and Paste This Proven </span>
             <span className="bg-gradient-primary bg-clip-text text-transparent">'Acquisition System'</span>
             <span className="text-foreground"> to Book </span>
@@ -46,17 +46,17 @@ const Success = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="space-y-4 flex flex-col items-center">
+        <div className="space-y-3 sm:space-y-4 flex flex-col items-center px-2">
           <Button 
             variant="cta" 
             size="lg" 
             onClick={handleBookingClick}
-            className="text-xl px-8 py-6 rounded-2xl min-h-[80px] flex flex-col items-center justify-center"
+            className="text-lg sm:text-xl px-6 sm:px-8 py-4 sm:py-6 rounded-xl sm:rounded-2xl min-h-[60px] sm:min-h-[80px] flex flex-col items-center justify-center w-full max-w-md"
           >
-            <span>Claim your FREE 60-Minute 1:1 Strategy Session</span>
+            <span className="text-center">Claim your FREE 60-Minute 1:1 Strategy Session</span>
           </Button>
           
-          <p className="text-base text-muted-foreground font-medium">
+          <p className="text-sm sm:text-base text-muted-foreground font-medium text-center">
             Be quick! Spots are almost gone for September
           </p>
         </div>
