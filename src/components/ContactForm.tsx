@@ -84,17 +84,17 @@ export const ContactForm = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-bg flex flex-col items-center justify-center px-4 py-12">
-      <div className="max-w-4xl mx-auto text-center space-y-8 w-full">
+    <section className="min-h-screen bg-gradient-bg flex flex-col items-center justify-center px-4 py-8 sm:py-12 overflow-x-hidden">
+      <div className="max-w-4xl mx-auto text-center space-y-6 sm:space-y-8 w-full">
         {/* Header */}
-        <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
+        <div className="space-y-4 sm:space-y-6 w-full">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight break-words px-2">
             Unlock your{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">FREE</span>{" "}
             Growth Framework now before this comes down
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed px-2">
             This Growth Framework reveals the most powerful, high-converting strategies we've uncovered after running 
             hundreds of campaigns across Real Estate, other industries, and investing millions in online traffic.
           </p>

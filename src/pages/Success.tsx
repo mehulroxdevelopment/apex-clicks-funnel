@@ -11,16 +11,16 @@ const Success = () => {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-bg flex flex-col items-center justify-center px-4 py-12 text-center">
-      <div className="max-w-6xl mx-auto space-y-12">
+    <section className="min-h-screen bg-gradient-bg flex flex-col items-center justify-center px-4 py-8 sm:py-12 text-center overflow-x-hidden">
+      <div className="max-w-6xl mx-auto space-y-8 sm:space-y-12 w-full">
         {/* Success Message */}
-        <p className="text-lg md:text-xl text-blue-400 font-medium">
+        <p className="text-base sm:text-lg md:text-xl text-blue-400 font-medium px-2">
           Success! Here is the Battle-Tested Growth Framework we promised...
         </p>
 
         {/* Main Header */}
-        <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-black leading-tight">
+        <div className="space-y-4 sm:space-y-6 w-full">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight break-words px-2">
             <span className="text-foreground">Copy and Paste This Proven </span>
             <span className="bg-gradient-primary bg-clip-text text-transparent">'Acquisition System'</span>
             <span className="text-foreground"> to Book </span>
@@ -30,9 +30,9 @@ const Success = () => {
         </div>
 
         {/* Video Section */}
-        <div className="w-full">
+        <div className="w-full px-2 sm:px-0">
           <div className="relative w-full max-w-5xl mx-auto">
-            <div className="aspect-video rounded-2xl overflow-hidden shadow-elegant bg-card border">
+            <div className="aspect-video rounded-xl sm:rounded-2xl overflow-hidden shadow-elegant bg-card border">
               <iframe 
                 src="https://drive.google.com/file/d/10HztjClVddR5HJOJXPIBoUUcfs-yRrHA/preview"
                 width="100%" 
@@ -46,17 +46,17 @@ const Success = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="space-y-4 flex flex-col items-center">
+        <div className="space-y-3 sm:space-y-4 flex flex-col items-center w-full max-w-md mx-auto px-4">
           <Button 
             variant="cta" 
             size="lg" 
             onClick={handleBookingClick}
-            className="text-xl px-8 py-6 rounded-2xl min-h-[80px] flex flex-col items-center justify-center"
+            className="text-lg sm:text-xl px-6 sm:px-8 py-4 sm:py-6 rounded-2xl min-h-[70px] sm:min-h-[80px] flex flex-col items-center justify-center w-full"
           >
-            <span>Claim your FREE 60-Minute 1:1 Strategy Session</span>
+            <span className="text-center leading-tight">Claim your FREE 60-Minute 1:1 Strategy Session</span>
           </Button>
           
-          <p className="text-base text-muted-foreground font-medium">
+          <p className="text-sm sm:text-base text-muted-foreground font-medium text-center">
             Be quick! Spots are almost gone for September
           </p>
         </div>
