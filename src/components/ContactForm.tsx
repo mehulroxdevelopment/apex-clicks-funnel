@@ -3,21 +3,25 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Lock, User, Mail, Phone } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Lock, User, Mail, Phone, MessageSquare } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     email: "",
     phone: "",
-    countryCode: "+91"
+    countryCode: "+91",
+    message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({
     firstName: "",
     email: "",
-    phone: ""
+    phone: "",
+    message: ""
   });
   const { toast } = useToast();
   const navigate = useNavigate();
@@ -41,7 +45,8 @@ export const ContactForm = () => {
     const newErrors = {
       firstName: "",
       email: "",
-      phone: ""
+      phone: "",
+      message: ""
     };
 
     if (!formData.firstName.trim()) {
@@ -54,8 +59,16 @@ export const ContactForm = () => {
       newErrors.email = "Please enter a valid email address";
     }
 
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    }
+
     setErrors(newErrors);
-    return !newErrors.firstName && !newErrors.email;
+    return !newErrors.firstName && !newErrors.email && !newErrors.phone && !newErrors.message;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -67,21 +80,43 @@ export const ContactForm = () => {
 
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Success!",
-      description: "Redirecting you to your Growth Framework...",
-      duration: 3000,
-    });
-    
-    setIsSubmitting(false);
-    
-    // Navigate to success page after a brief delay
-    setTimeout(() => {
-      navigate('/success');
-    }, 1500);
+    try {
+      // Combine country code and phone number
+      const fullPhone = `${formData.countryCode}${formData.phone}`;
+
+      // Insert into Supabase
+      const { error } = await supabase
+        .from('contacts')
+        .insert({
+          name: formData.firstName,
+          email: formData.email,
+          phone: fullPhone,
+          country_code: formData.countryCode,
+          message: formData.message
+        });
+
+      if (error) throw error;
+
+      toast({
+        title: "Success!",
+        description: "Redirecting you to your Growth Framework...",
+        duration: 3000,
+      });
+      
+      // Navigate to success page after a brief delay
+      setTimeout(() => {
+        navigate('/success');
+      }, 1500);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -185,10 +220,39 @@ export const ContactForm = () => {
                   type="tel"
                   value={formData.phone}
                   onChange={handleInputChange}
-                  className="h-12 text-lg border-2 border-l-0 border-border focus:border-primary rounded-l-none rounded-r-xl"
+                  required
+                  className={`h-12 text-lg border-2 border-l-0 ${errors.phone ? 'border-destructive' : 'border-border'} focus:border-primary rounded-l-none rounded-r-xl`}
                   placeholder="Phone number"
                 />
               </div>
+              {errors.phone && (
+                <p className="text-xs text-destructive">{errors.phone}</p>
+              )}
+            </div>
+
+            {/* Message */}
+            <div className="space-y-2">
+              <Label htmlFor="message" className="text-sm font-medium text-muted-foreground flex items-center gap-2">
+                <MessageSquare className="w-4 h-4" />
+                What are you most interested in learning about?
+              </Label>
+              <Textarea
+                id="message"
+                name="message"
+                value={formData.message}
+                onChange={(e) => {
+                  setFormData(prev => ({ ...prev, message: e.target.value }));
+                  if (errors.message) {
+                    setErrors(prev => ({ ...prev, message: "" }));
+                  }
+                }}
+                required
+                className={`min-h-[100px] text-lg border-2 rounded-xl ${errors.message ? 'border-destructive' : 'border-border focus:border-primary'}`}
+                placeholder="Tell us about your goals..."
+              />
+              {errors.message && (
+                <p className="text-xs text-destructive">{errors.message}</p>
+              )}
             </div>
 
             {/* Submit Button */}
