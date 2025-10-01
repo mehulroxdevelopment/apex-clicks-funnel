@@ -46,7 +46,7 @@ const Success = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="space-y-3 sm:space-y-4 flex flex-col items-center w-full max-w-md mx-auto px-4">
+        <div className="space-y-3 sm:space-y-4 flex flex-col items-center w-full max-w-md sm:max-w-xl mx-auto px-4">
           <Button 
             variant="cta" 
             size="lg" 
