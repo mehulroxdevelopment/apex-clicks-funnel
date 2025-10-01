@@ -51,7 +51,7 @@ const Success = () => {
             variant="cta" 
             size="lg" 
             onClick={handleBookingClick}
-            className="text-lg sm:text-xl px-6 sm:px-8 py-4 sm:py-6 rounded-2xl min-h-[70px] sm:min-h-[80px] flex flex-col items-center justify-center w-full"
+            className="text-base sm:text-xl px-4 sm:px-8 py-4 sm:py-6 rounded-2xl min-h-[70px] sm:min-h-[80px] flex items-center justify-center w-full"
           >
             <span className="text-center leading-tight">Claim your FREE 60-Minute 1:1 Strategy Session</span>
           </Button>

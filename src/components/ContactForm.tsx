@@ -10,7 +10,8 @@ export const ContactForm = () => {
   const [formData, setFormData] = useState({
     firstName: "",
     email: "",
-    phone: ""
+    phone: "",
+    countryCode: "+91"
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState({
@@ -156,9 +157,28 @@ export const ContactForm = () => {
                 Phone number
               </Label>
               <div className="flex">
-                <div className="flex items-center px-3 bg-muted border-2 border-r-0 border-border rounded-l-xl">
-                  <span className="text-2xl">🇮🇳</span>
-                </div>
+                <select
+                  name="countryCode"
+                  value={formData.countryCode}
+                  onChange={(e) => setFormData(prev => ({ ...prev, countryCode: e.target.value }))}
+                  className="h-12 px-3 bg-muted border-2 border-r-0 border-border rounded-l-xl text-sm focus:outline-none focus:border-primary"
+                >
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+91">🇮🇳 +91</option>
+                  <option value="+61">🇦🇺 +61</option>
+                  <option value="+81">🇯🇵 +81</option>
+                  <option value="+86">🇨🇳 +86</option>
+                  <option value="+33">🇫🇷 +33</option>
+                  <option value="+49">🇩🇪 +49</option>
+                  <option value="+39">🇮🇹 +39</option>
+                  <option value="+34">🇪🇸 +34</option>
+                  <option value="+7">🇷🇺 +7</option>
+                  <option value="+55">🇧🇷 +55</option>
+                  <option value="+27">🇿🇦 +27</option>
+                  <option value="+82">🇰🇷 +82</option>
+                  <option value="+52">🇲🇽 +52</option>
+                </select>
                 <Input
                   id="phone"
                   name="phone"
@@ -177,12 +197,12 @@ export const ContactForm = () => {
               variant="cta" 
               size="lg" 
               disabled={isSubmitting}
-              className="w-full text-xl py-6 rounded-2xl mt-8 min-h-[80px] flex flex-col items-center justify-center"
+              className="w-full text-base sm:text-xl py-4 sm:py-6 rounded-2xl mt-8 min-h-[70px] sm:min-h-[80px] flex flex-col items-center justify-center px-4"
             >
               {isSubmitting ? "Submitting..." : (
                 <>
-                  <span>Get the Growth Framework</span>
-                  <span className="text-base font-normal opacity-90">
+                  <span className="text-center leading-tight">Get the Growth Framework</span>
+                  <span className="text-xs sm:text-base font-normal opacity-90 text-center leading-tight">
                     (Get FREE what costed us millions to find out)
                   </span>
                 </>
